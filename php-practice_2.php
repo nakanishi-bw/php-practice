@@ -84,7 +84,16 @@ public function attend($subject)
     }
 
 // Q5 定義済みクラス
+//問1
+$date = new DateTime();
+echo $date->modify('-1 months')->format('Y-m-d');
 
+//問2
+date_default_timezone_set('Asia/Tokyo');
+$today = new DateTime('now');
+$date = new DateTime('1992-02-02');
+$diff = $date->diff($today);
 
+echo $diff->format('あの日から%a日経過しました。');
 
 ?>

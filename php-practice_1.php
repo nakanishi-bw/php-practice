@@ -118,7 +118,7 @@ echo distinguishNum(11);
 // Q13 関数とswitch文
 function evaluateGrade($grade){
     switch($grade){
-        case 'A';
+        case 'A':
         case 'B':
             echo '合格です。' . "\n";
             break;

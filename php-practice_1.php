@@ -16,7 +16,7 @@ date_default_timezone_set('Asia/Tokyo');
 
 echo date('現在時刻は、Y年m月d日 H時i分s秒です。');
 
-// Q4 条件分岐-1 if文
+// Q4 条件分岐-1 if文　＊
 $device = 'windows';
 
 if($device === 'windows' || $device === 'mac'){
@@ -31,7 +31,7 @@ $adult = ($age >= 18) ? '成人です。' : '未成年です。';
 
 echo $adult;
 
-// Q6 配列
+// Q6 配列　＊
 $prefectures = [
     '東京都', 
     '神奈川県', 
@@ -65,24 +65,18 @@ foreach ($tpc as $key => $value) {
     echo $key . 'の県庁所在地は、' . $value . 'です。';
 }
 
-// Q9 連想配列-3
+// Q9 連想配列-3　＊
 $tpc['愛知県'] = '名古屋市';
 $tpc['大阪府'] = '大阪市';
-$kantou = [
-    '東京都',
-    '神奈川県',
-    '千葉県',
-    '埼玉県',
-    '栃木県',
-    '群馬県',
-    '茨城県'
-];
 
 foreach($tpc as $key => $value){
-    if(in_array($key,$kantou,true)){
-    echo $key . 'の県庁所在地は、' . $value . 'です。'."\n";
-}else{
-    echo $key . 'は関東地方ではありません。'."\n";
+    if(
+    $key === '愛知県'||
+    $key === '大阪府'
+    ){
+        echo $key . 'は関東地方ではありません。'."\n";
+    }else{
+        echo $key . 'の県庁所在地は、' . $value . 'です。'."\n";
 }
 }
 
@@ -95,7 +89,7 @@ function hello($name)
 hello('金谷');
 hello('安藤');
 
-// Q11 関数-2
+// Q11 関数-2　＊
 function calcTaxInPrice($price){
     $taxInPrice = $price * 1.1;
     return $price . '円の商品の税込価格は' . $taxInPrice . 'です。';

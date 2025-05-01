@@ -1,5 +1,5 @@
 <?php
-// Q1 tic-tac問題
+// Q1 tic-tac問題　＊
 for ($i = 1; $i <= 100; $i++) {
     if ($i % 20 === 0) {
         echo 'tic-tac' . "\n";
@@ -40,7 +40,7 @@ foreach($personalInfos as $index => $info){
     $number++;
 }
 
- //q3
+ //q3　＊
  $ageList = [25, 30, 18];
 
  foreach($personalInfos as $index => $info){
@@ -49,7 +49,7 @@ foreach($personalInfos as $index => $info){
  
  var_dump($personalInfos);
 
-// Q3 オブジェクト-1
+// Q3 オブジェクト-1　＊＊
 class Student
 {
     public $studentId;
@@ -67,7 +67,7 @@ class Student
 
     public function attend()
     {
-        echo '授業に出席しました。';
+            echo '授業に出席しました。';
     }
 }
 
@@ -75,15 +75,32 @@ $student = new Student(120, '山田');//　追加
 
 echo "学籍番号{$student->studentId}番の生徒は{$student->studentName}です。";
 
-// Q4 オブジェクト-2
-$yamada->attend('PHP');//　追加
+// Q4 オブジェクト-2　＊＊
+class Student
+{
+    public $studentId;
+    public $studentName;
 
-public function attend($subject)
+    public function __construct($id, $name)
+    {
+   /* ＊*/  if (!is_int($id) || $id <= 0) {
+            echo '正の整数で入力してください。';
+        }
+        
+        $this->studentId = $id;
+        $this->studentName = $name;
+    }
+
+    public function attend($subject)
     {
         echo "{$this->studentName}は{$subject}の授業に参加しました。学籍番号：{$this->studentId}";
     }
+}
 
-// Q5 定義済みクラス
+$yamada = new Student(120, '山田');// 追加
+$yamada->attend('PHP');//　追加
+
+// Q5 定義済みクラス　＊
 //問1
 $date = new DateTime();
 echo $date->modify('-1 months')->format('Y-m-d');
